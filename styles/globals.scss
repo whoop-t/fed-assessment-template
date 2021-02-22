@@ -1,14 +1,39 @@
+/* Variables */
+$primary-bg: #f2f2f2;
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
+
 /* Reset */
 html,
 body,
 p,
 a,
 ul,
-li {
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
     sans-serif;
+}
+
+body {
+  background: $primary-bg;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Oswald';
 }
 
 a {

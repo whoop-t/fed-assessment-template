@@ -3,57 +3,40 @@ import styles from '../styles/About.module.scss';
 
 const About = () => {
   return (
-    <div className={styles.container}>
+    <main>
       <Head>
-        <title>Create Next App</title>
+        <title>BallerTV | About Us</title>
         <link rel='icon' href='/favicon.ico' />
       </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href='https://nextjs.org'>Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing <code className={styles.code}>pages/index.js</code>
+      <header className={styles.hero}>
+        <h1 className={styles.hero__header}>WE BUILD WINNING TEAMS</h1>
+        <p className={styles.hero__text}>They’re helping us build the widest sports network in the world.</p>
+      </header>
+      <section className={styles.desc}>
+        <h2 className={styles.desc__header}>OUR VISION</h2>
+        <p className={styles.desc__text}>
+          BallerTV was founded in 2016 by Cramster co-founders Rob Angarita and Aaron Hawkey to provide live video coverage of amateur
+          sports while creating sports media job opportunities in local communities. As of 2018, BallerTV is now a coast-to-coast operation
+          with a network of thousands of broadcasters across the country. We’re on track to broadcast our 100,000th game this year — and
+          we’re just getting started.
         </p>
-
-        <div className={styles.grid}>
-          <a href='https://nextjs.org/docs' className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href='https://nextjs.org/learn' className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a href='https://github.com/vercel/next.js/tree/master/examples' className={styles.card}>
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href='https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>Instantly deploy your Next.js site to a public URL with Vercel.</p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href='https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Powered by <img src='/vercel.svg' alt='Vercel Logo' className={styles.logo} />
-        </a>
-      </footer>
-    </div>
+      </section>
+      <section className={styles.press}>
+        <p className={styles.press__text}>BallerTV and its founders have appeared in:</p>
+        {/** Carousel goes here */}
+      </section>
+      <section className={styles.desc}>
+        <h2 className={styles.desc__header}>OUR TEAM</h2>
+        <p className={styles.desc__text}>
+          Our founders started BallerTV in 2016 with a scrappy 6-man development team — we’re now at 20 full-time office staff and roughly
+          2,000 broadcasting operations staff coast-to-coast, and growing every day. From software engineers, to sales staff to operations
+          managers, BallerTV is constantly innovating broadcasting and logistics solutions to build the world’s widest sports network.
+          <br />
+          <br />
+          We assemble fearless teams, trained to dominate operations challenges and deliver top-notch content to our subscribers.
+        </p>
+      </section>
+    </main>
   );
 };
 
