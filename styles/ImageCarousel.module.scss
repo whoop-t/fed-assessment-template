@@ -1,0 +1,33 @@
+.carousel {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  min-width: 100%;
+  max-width: 100%;
+  margin-top: 2rem;
+  &__img {
+    width: 200px;
+    height: 50px;
+    object-fit: scale-down;
+  }
+  &__current {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  &__slideActive {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__left {
+    position: absolute;
+    left: 20px;
+    top: 30px;
+  }
+  &__right {
+    position: absolute;
+    right: 20px;
+    top: 30px;
+  }
+}
