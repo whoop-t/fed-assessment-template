@@ -16,6 +16,7 @@ const About = () => {
       <header className={styles.hero}>
         <h1 className={styles.hero__header}>WE BUILD WINNING TEAMS</h1>
         <p className={styles.hero__text}>They’re helping us build the widest sports network in the world.</p>
+        <div className={styles.hero__divider}></div>
       </header>
       <section className={styles.desc}>
         <h2 className={styles.desc__header}>OUR VISION</h2>
