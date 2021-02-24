@@ -1,11 +1,11 @@
 import Head from 'next/head';
 import styles from '../styles/About.module.scss';
-import { values, press } from '../config/data';
-import ImageCarousel from '../components/ImageCarousel';
+import { valuesOne, valuesTwo, press } from '../lib/data';
+import ImageCarousel from '../components/ImageCarousel.jsx';
 
 const About = () => {
   return (
-    <main>
+    <main className={styles.main}>
       <Head>
         <title>BallerTV - About Us</title>
         <link rel='icon' href='/favicon.ico' />
@@ -30,7 +30,14 @@ const About = () => {
         <div className={styles.press__blackbg}></div>
         <div className={styles.press__content}>
           <p className={styles.press__text}>BallerTV and its founders have appeared in:</p>
-          <ImageCarousel images={press} chunkSize={3} />
+          <div className={styles.press__carousel}>
+            <ImageCarousel images={press} chunkSize={3} />
+          </div>
+          <div className={styles.press__list}>
+            {press.map((outlet, i) => (
+              <img className={styles.press__img} src={outlet.imgPath} alt={outlet.alt} key={i} />
+            ))}
+          </div>
         </div>
       </section>
       <section className={styles.desc}>
@@ -55,29 +62,44 @@ const About = () => {
       </section>
       <section className={styles.values}>
         <h2 className={styles.values__header}>OUR VALUES</h2>
-        {/* Map over values data in config folder */}
-        {values.map((value, i) => {
-          return (
-            <div className={styles.values__value}>
-              <img src={value.iconPath} alt={value.alt} className={styles.values__icon} />
-              <h3 className={styles.values__title}>{value.title}</h3>
-              <p className={styles.values__text}>{value.text}</p>
-            </div>
-          );
-        })}
+        {/* Map over values data in lib folder */}
+        <div className={styles.values__value_grid}>
+          <div>
+            {valuesOne.map((value, i) => {
+              return (
+                <div className={styles.values__value} key={i}>
+                  <img src={value.iconPath} alt={value.alt} className={styles.values__icon} />
+                  <h3 className={styles.values__title}>{value.title}</h3>
+                  <p className={styles.values__text}>{value.text}</p>
+                </div>
+              );
+            })}
+          </div>
+          <div>
+            {valuesTwo.map((value, i) => {
+              return (
+                <div className={styles.values__value} key={i}>
+                  <img src={value.iconPath} alt={value.alt} className={styles.values__icon} />
+                  <h3 className={styles.values__title}>{value.title}</h3>
+                  <p className={styles.values__text}>{value.text}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </section>
       <section className={styles.join}>
         {/* Use second wrapped for stacked backgrounds */}
         <div className={styles.join__bg}>
-          <h2 className={styles.join__header}>JOIN THE TEAM</h2>
-          <div className={styles.join__card}>
+          <h2 className={`${styles.join__header} ${styles.join__head}`}>JOIN THE TEAM</h2>
+          <div className={`${styles.join__card} ${styles.join__one}`}>
             <p className={styles.join__text}>Want to join our HQ in Pasadena, California?</p>
             <a href='#' className={styles.join__link}>
               Browse our Full Time Employment Listings
               <img src='/icons/double-arrow.svg' alt='double arrow' className={styles.join__img} />
             </a>
           </div>
-          <div className={`${styles.join__card} ${styles.join__card__clipped}`}>
+          <div className={`${styles.join__card} ${styles.join__card__clipped} ${styles.join__two}`}>
             <p className={styles.join__text}>
               Want to become a broadcaster? Becoming a broadcaster is always a great way to get a start as part of the BallerTV Team!{' '}
             </p>

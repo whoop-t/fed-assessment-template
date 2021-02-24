@@ -26,12 +26,11 @@ $grey-txt: #9b9b9b;
   flex-direction: column;
   padding: 3rem;
   padding-top: 1rem;
-  min-height: 450px;
+  min-height: 500px;
   text-align: center;
   color: $white-txt;
-  // Check Browser compat later
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.0590466) 0%, rgba(28, 29, 32, 0.535932) 40.41%, rgba(0, 0, 0, 0.588287) 80.42%),
-    url('../public/hero-dunk.png') no-repeat 41% 90%;
+    url('../public/hero-divider.png') bottom no-repeat, url('../public/hero-dunk.png') no-repeat 53% 90%;
   &__header {
     font-weight: 400;
     font-size: 2.19rem;
@@ -45,7 +44,6 @@ $grey-txt: #9b9b9b;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 2.5rem;
   &__header {
     font-weight: 700;
   }
@@ -59,6 +57,7 @@ $grey-txt: #9b9b9b;
 
 .press {
   position: relative;
+  margin-bottom: 2rem;
   &__blackbg {
     position: absolute;
     bottom: 15px;
@@ -66,6 +65,7 @@ $grey-txt: #9b9b9b;
     min-height: 100%;
     min-width: 100%;
     background: url('../public/black-clipped.png') no-repeat;
+    background-size: cover;
   }
   &__content {
     display: flex;
@@ -73,6 +73,7 @@ $grey-txt: #9b9b9b;
     align-items: center;
     padding-top: 5rem;
     background: url('../public/generic-orange-path.png') no-repeat center right;
+    background-size: cover;
     min-height: 380px;
   }
   &__text {
@@ -81,7 +82,11 @@ $grey-txt: #9b9b9b;
     font-size: 1.125rem;
     color: $white-txt;
   }
-  &____carousel {
+  &__carousel {
+    width: 100%;
+  }
+  &__list {
+    display: none;
   }
 }
 
@@ -93,7 +98,8 @@ $grey-txt: #9b9b9b;
     bottom: 50px;
     min-height: 100%;
     min-width: 100%;
-    background: url('../public/generic-orange-path.png') no-repeat;
+    background: url('../public/generic-orange-path.png');
+    background-size: cover;
   }
   &__content {
     display: flex;
@@ -103,10 +109,11 @@ $grey-txt: #9b9b9b;
     color: $white-txt;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.0590466) 0%, rgba(28, 29, 32, 0.535932) 40.41%, rgba(0, 0, 0, 0.588287) 80.42%),
       url('../public/branding.png') no-repeat 30% 10%;
+    background-size: cover;
     clip-path: polygon(0 0, 100% 5%, 100% 93%, 0 100%);
   }
   &__text {
-    margin: 4rem 0;
+    margin: 6rem 0 2.5rem 0;
   }
   &__link {
     font-size: 13px;
@@ -124,6 +131,10 @@ $grey-txt: #9b9b9b;
   text-align: center;
   margin-top: 3.125rem;
   margin-bottom: 5rem;
+  &__value_grid {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
   &__header {
     margin-bottom: 2.75rem;
     font-weight: 700;
@@ -148,20 +159,20 @@ $grey-txt: #9b9b9b;
 }
 
 .join {
-  background: $secondary-main;
-  min-height: 525px;
-  clip-path: polygon(0 0, 100% 2%, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 6%, 100% 100%, 0 100%);
   &__bg {
     display: grid;
-    grid-template-rows: 100px 150px 300px;
+    grid-template-rows: 140px 150px 300px;
     justify-content: center;
-    background: url('/foam-bg.png') right 20% no-repeat;
+    background: url('/join-bg.svg') no-repeat;
+    background-size: cover;
   }
   &__header {
     align-self: center;
     color: $white-txt;
     text-align: center;
-    margin-top: 2.5rem;
+    align-self: flex-end;
+    margin-bottom: 1rem;
   }
   &__card {
     background: #f2f2f2;
@@ -187,6 +198,144 @@ $grey-txt: #9b9b9b;
   }
 }
 
-/* Tablet and Desktop Styles */
+/* Tablet/Laptop */
+@media screen and (min-width: 768px) {
+  .navbar {
+    min-height: 75px;
+    &__logo {
+      width: 150px;
+    }
+  }
+  .hero {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.0590466) 0%, rgba(28, 29, 32, 0.535932) 40.41%, rgba(0, 0, 0, 0.588287) 80.42%),
+      url('../public/hero-divider.png') bottom no-repeat, url('../public/hero-dunk.png') no-repeat bottom / cover;
+    &__header {
+      font-size: 2.875rem;
+    }
+    &__text {
+      font-size: 1.875rem;
+      padding: 0 9rem;
+      max-width: 868px;
+    }
+  }
+
+  .desc {
+    padding: 3rem 9rem 5rem 9rem;
+    &__text {
+      max-width: 868px;
+    }
+  }
+
+  .press {
+    &__carousel {
+      display: none;
+    }
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2rem;
+      max-width: 868px;
+    }
+    &__img {
+      padding: 0 0.5rem;
+    }
+    &__blackbg {
+      bottom: 30px;
+    }
+  }
+  .branding {
+    &__link {
+      font-size: 1rem;
+      max-width: fit-content;
+      padding: 1.4rem 1rem 1rem 1rem;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    &__content {
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.0590466) 0%, rgba(28, 29, 32, 0.535932) 40.41%, rgba(0, 0, 0, 0.588287) 80.42%),
+        url('../public/branding.png') no-repeat 70% 25%;
+      background-size: cover;
+    }
+  }
+  .values {
+    margin-top: 5rem;
+    &__value_grid {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 2rem;
+      padding: 0 4rem;
+    }
+    &__value {
+      display: grid;
+      grid-template-columns: 0.1fr 1fr;
+      grid-template-rows: 2fr;
+      column-gap: 1rem;
+      grid-template-areas:
+        'icon title'
+        '. text';
+    }
+    &__icon {
+      grid-area: icon;
+      margin: 0;
+      width: 35px;
+    }
+    &__title {
+      grid-area: title;
+      text-align: left;
+    }
+    &__text {
+      text-align: left;
+      grid-area: text;
+    }
+  }
+
+  .join {
+    clip-path: none;
+    min-height: 500px;
+    background-color: $secondary-main;
+    &__bg {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 2fr;
+      column-gap: 1.5rem;
+      grid-template-areas:
+        'head head'
+        'one two';
+    }
+    &__head {
+      grid-area: head;
+      margin-bottom: 2rem;
+    }
+    &__one {
+      grid-area: one;
+      justify-self: flex-end;
+      max-height: 250px;
+    }
+    &__two {
+      grid-area: two;
+      justify-self: flex-start;
+      min-height: 270px;
+    }
+    &__text {
+      max-width: 250px;
+    }
+    &__link {
+      display: flex;
+      max-width: 165px;
+    }
+    &__card {
+      max-width: none;
+      min-width: 370px;
+    }
+    &__img {
+      align-self: flex-end;
+      padding-bottom: 0.2rem;
+    }
+    &__card__clipped {
+      clip-path: none;
+    }
+  }
+}
+
+/* Desktop Styles */
 @media screen and (min-width: 1200px) {
 }
