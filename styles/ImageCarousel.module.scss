@@ -21,11 +21,21 @@
     align-items: center;
   }
   &__left {
+    background: url('../public/icons/left-arrow.svg') no-repeat;
+    text-decoration: none;
+    border: none;
+    width: 22px;
+    height: 22px;
     position: absolute;
     left: 20px;
     top: 30px;
   }
   &__right {
+    background: url('../public/icons/right-arrow.svg') no-repeat;
+    text-decoration: none;
+    border: none;
+    width: 22px;
+    height: 22px;
     position: absolute;
     right: 20px;
     top: 30px;

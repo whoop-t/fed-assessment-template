@@ -38,7 +38,7 @@ const ImageCarousel = ({ images, chunkSize }) => {
 
   return (
     <div className={styles.carousel}>
-      <img className={styles.carousel__left} src='/icons/left-arrow.svg' alt='' onClick={onPrevClick} />
+      <button className={styles.carousel__left} src='/icons/left-arrow.svg' onClick={onPrevClick} />
       {chunkedImgs.map((c, i) => {
         if (i === current) {
           return (
@@ -50,7 +50,7 @@ const ImageCarousel = ({ images, chunkSize }) => {
           );
         }
       })}
-      <img className={styles.carousel__right} src='/icons/right-arrow.svg' alt='' onClick={onNextClick} />
+      <button className={styles.carousel__right} src='/icons/right-arrow.svg' onClick={onNextClick} />
     </div>
   );
 };
